@@ -1,0 +1,9 @@
+# Building Intelligence — API runtime (the baseline classifier needs no torch).
+fastapi>=0.111
+uvicorn[standard]>=0.30
+pydantic>=2.7
+python-multipart>=0.0.9
+pillow>=10.3
+numpy>=1.26
+anthropic>=0.40
+python-dotenv>=1.0
