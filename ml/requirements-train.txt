@@ -1,0 +1,5 @@
+# Training-only dependencies (not needed to run the API baseline).
+torch>=2.2
+torchvision>=0.17
+pillow>=10.3
+numpy>=1.26
