@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Two palettes as CSS variables (space-separated RGB triplets so Tailwind can apply
+ * opacity). The dark "CLASSIFIED" spy-tech theme is the default; .light is the clear
+ * theme. Toggling the class on <html> re-themes the whole app.
+ */
+:root,
+.dark {
+  color-scheme: dark;
+  --ink-950: 10 14 26;
+  --ink-900: 10 14 26;
+  --ink-850: 22 26 51;
+  --ink-800: 30 34 64;
+  --ink-700: 38 43 77;
+  --line: 42 48 82;
+  --line-strong: 61 69 112;
+  --fg: 232 236 245;
+  --fg-muted: 154 163 189;
+  --fg-faint: 98 108 138;
+  --signal-300: 255 166 77;
+  --signal-400: 255 140 26;
+  --signal-500: 255 122 0;
+  --signal-600: 230 110 0;
+  --signal-700: 204 98 0;
+  /* Active tab label: bright orange in dark (AA on ink-900), darker orange in light (AA there). */
+  --tab-active: 255 166 77;
+  --amber: 255 176 46;
+  --amber-300: 255 196 92;
+  --onaccent: 10 14 26;
+  --critical: 251 94 107;
+  --major: 245 181 68;
+  --minor: 52 211 153;
+  --grid-dot: 255 255 255;
+}
+
+.light {
+  color-scheme: light;
+  --ink-950: 244 245 247;
+  --ink-900: 244 245 247;
+  --ink-850: 236 238 242;
+  --ink-800: 226 229 236;
+  --ink-700: 213 217 226;
+  --line: 213 217 226;
+  --line-strong: 184 190 204;
+  --fg: 20 24 42;
+  --fg-muted: 74 81 104;
+  --fg-faint: 94 101 122;
+  --signal-300: 230 110 0;
+  --signal-400: 255 122 0;
+  --signal-500: 230 110 0;
+  --signal-600: 204 98 0;
+  --signal-700: 179 86 0;
+  --tab-active: 179 86 0;
+  --amber: 181 120 26;
+  --amber-300: 176 116 24;
+  --onaccent: 10 14 26;
+  --critical: 220 38 38;
+  --major: 181 120 26;
+  --minor: 5 150 105;
+  --grid-dot: 20 24 42;
+}
+
+body {
+  @apply bg-ink-900 font-sans text-fg antialiased;
+}
+
+/* Fine dot grid + a faint orange glow, the intelligence-terminal backdrop. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgb(var(--grid-dot) / 0.05) 1px, transparent 1px),
+    radial-gradient(42rem 42rem at 85% -8%, rgb(var(--signal-500) / 0.07), transparent 60%),
+    radial-gradient(38rem 38rem at 0% 100%, rgb(var(--signal-500) / 0.05), transparent 55%);
+  background-size: 26px 26px, 100% 100%, 100% 100%;
+}
+
+::selection {
+  background: rgb(var(--signal-500) / 0.30);
+}
+
+/* Thin scrollbars for the instrument feel. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--line-strong)) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgb(var(--line));
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--line-strong));
+  background-clip: padding-box;
+}
+
+/* Respect users who prefer fewer animations. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
