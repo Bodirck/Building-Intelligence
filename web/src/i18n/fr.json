@@ -1,0 +1,122 @@
+{
+  "app": {
+    "name": "Building Intelligence",
+    "tagline": "Détection de fissures et intelligence des défauts du béton"
+  },
+  "nav": {
+    "analysis": "Analyse",
+    "portfolio": "Portefeuille"
+  },
+  "common": {
+    "theme": "Changer de thème",
+    "critical": "Critique",
+    "major": "Majeur",
+    "minor": "Mineur",
+    "defects": "Défauts",
+    "riskScore": "Score de risque",
+    "confidence": "Confiance",
+    "structures": "Ouvrages",
+    "crack": "Fissure",
+    "uncracked": "Sans fissure"
+  },
+  "provider": {
+    "label": "Moteur de fiche de défaut",
+    "tooltip": "Fiches de défaut générées par {{provider}}.",
+    "mockTooltip": "Mode démo — les fiches sont générées de façon déterministe, pas par un LLM en direct.",
+    "mockLabel": "démo"
+  },
+  "analysis": {
+    "kicker": "Inspection terrain",
+    "title": "Téléversement & analyse",
+    "meta": "Déposez une photo d'inspection du béton. Le classifieur indique fissure / sans fissure avec un score de confiance, puis une fiche de défaut structurée est générée.",
+    "dropTitle": "Déposez une photo d'inspection",
+    "dropHint": "JPG ou PNG · une surface de béton, un tablier, un mur ou une pile",
+    "dropCta": "Parcourir les fichiers",
+    "dragActive": "Relâchez pour analyser",
+    "classifying": "Classification de la surface…",
+    "generating": "Génération de la fiche de défaut…",
+    "scanRef": "RÉF. SCAN",
+    "verdictCrack": "Fissure détectée",
+    "verdictNoCrack": "Aucune fissure détectée",
+    "crackProbability": "Probabilité de fissure",
+    "model": "Modèle",
+    "latency": "Latence",
+    "regions": "Zones d'intérêt",
+    "noSheet": "Pas de fiche de défaut",
+    "noSheetHint": "La surface a été classée comme saine — aucune fiche n'est générée.",
+    "newScan": "Nouveau scan",
+    "exportJson": "Exporter JSON",
+    "print": "Imprimer la fiche",
+    "errorTitle": "Échec de l'analyse",
+    "tips": {
+      "confidence": "Confiance du modèle dans la classe prédite. En dessous de ~0,7, l'image devrait être reprise ou revue par un inspecteur.",
+      "regions": "Zones approximatives les plus pondérées par le modèle. Indicatif uniquement — pas une mesure calibrée."
+    }
+  },
+  "defect": {
+    "title": "Fiche de défaut",
+    "id": "ID défaut",
+    "type": "Type de fissure",
+    "severity": "Sévérité",
+    "element": "Élément structurel",
+    "location": "Localisation",
+    "width": "Largeur est.",
+    "recommendation": "Recommandation",
+    "norm": "Référence normative",
+    "rationale": "Justification de la sévérité",
+    "summary": "Synthèse",
+    "sheetConfidence": "Confiance de la fiche",
+    "generatedBy": "Généré par",
+    "generatedByLlm": "LLM (Claude)",
+    "generatedByMock": "déterministe (démo)"
+  },
+  "portfolio": {
+    "kicker": "Gestion d'actifs",
+    "title": "Tableau de bord du portefeuille",
+    "meta": "Vue d'ensemble des ouvrages supervisés : couverture d'inspection, taux de détection de défauts et sévérité, avec les actifs les plus à risque en premier.",
+    "kpi": {
+      "structures": "Ouvrages suivis",
+      "images": "Images analysées",
+      "defectRate": "Taux de détection de défauts",
+      "cracks": "Fissures détectées"
+    },
+    "severityMix": "Répartition par sévérité",
+    "byType": "Types de fissures",
+    "topRisk": "Ouvrages les plus à risque",
+    "map": "Carte des ouvrages",
+    "register": "Registre des actifs",
+    "overview": "Vue d'ensemble",
+    "tabs": {
+      "overview": "Vue d'ensemble",
+      "register": "Registre des actifs"
+    },
+    "table": {
+      "structure": "Ouvrage",
+      "type": "Type",
+      "location": "Localisation",
+      "cracks": "Fissures",
+      "defectRate": "Taux de défauts",
+      "lastInspected": "Dernière inspection",
+      "risk": "Risque",
+      "severity": "Sévérité",
+      "status": "Statut",
+      "sort": "Trier par",
+      "filter": "Filtrer"
+    },
+    "status": {
+      "monitor": "Surveillance",
+      "action_required": "Action requise",
+      "critical": "Critique"
+    },
+    "tips": {
+      "defectRate": "Part des images analysées classées comme fissurées sur l'ensemble des ouvrages.",
+      "risk": "Score de risque composite 0–100 pondérant sévérité et taux de défauts. ≥70 critique, ≥40 action requise.",
+      "severityMix": "Répartition des défauts détectés par sévérité sur le portefeuille.",
+      "topRisk": "Ouvrages classés par score de risque composite. Cliquez sur une barre pour inspecter l'ouvrage."
+    }
+  },
+  "footer": {
+    "tagline": "Building Intelligence // Analyse structurelle des fissures",
+    "repo": "Code source"
+  }
+}
